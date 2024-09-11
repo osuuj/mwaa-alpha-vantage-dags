@@ -10,9 +10,7 @@
 
 
 ## Introduction
-This repository contains AWS Managed Workflows for Apache Airflow (MWAA) Directed Acyclic Graphs (DAGs) designed to download financial data from Alpha Vantage. It includes Python modules, configs and a `requirements.txt` file for managing dependencies.
-
-This project provides a set of Airflow DAGs for automating the process of fetching financial data from Alpha Vantage. The DAGs are designed to be used with AWS Managed Workflows for Apache Airflow (MWAA), simplifying the integration of financial data into your workflows.
+This project provides a set of Airflow DAGs for automating the process of fetching financial data from Alpha Vantage.The DAGs are designed to be used with AWS Managed Workflows for Apache Airflow (MWAA), simplifying the integration of financial data into your workflows. It includes Python modules, configs and a `requirements.txt` file for managing dependencies.
 
 ## Folder Structure
 Here is the folder structure of the repository:
