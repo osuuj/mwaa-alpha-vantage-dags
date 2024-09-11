@@ -34,5 +34,8 @@ mwaa-local-env
 VERSION
 LICENSE
 
-# Ignore README files
+# Ignore all files in the startup_script folder
+startup_script/*
 
+# Do not ignore the folder itself
+!startup_script/
