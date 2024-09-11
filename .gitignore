@@ -33,5 +33,4 @@ LICENSE
 # Ignore all files in the startup_script folder
 startup_script/*
 
-# Do not ignore the folder itself
-!startup_script/
+!startup_script/example_startup.sh
