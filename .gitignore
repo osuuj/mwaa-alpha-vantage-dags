@@ -1,0 +1,39 @@
+# Data
+/data/
+/db_data
+
+# Environments
+.env
+
+# Logs
+/logs
+
+# Ignore workspace files
+*.workspace
+
+# Ignore compiled Python files in the dags directory
+dags/**/*.pyc
+
+# Ignore IDE configuration files
+/.idea
+
+# Ignore Mac OS-specific storage files
+.DS_Store
+
+# Ignore docker folder
+docker/
+
+# Ignore only startup.sh in the startup_script folder
+startup_script/startup.sh
+
+# Ignore specific files
+.github
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+mwaa-local-env
+VERSION
+LICENSE
+
+# Ignore README files
+README
+README.md
