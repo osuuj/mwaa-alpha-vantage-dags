@@ -16,16 +16,18 @@ This project provides a set of Airflow DAGs for automating the process of fetchi
 Here is the folder structure of the repository:
 ```plaintext
 .
-├── dags
-│   ├── alpha_vantage_dag.py
-│   └── another_dag.py
-├── plugins
-│   ├── data_fetcher.py
-│   └── data_processor.py
 ├── configs
-│   ├── config.json
-│   └── another_config.json
-├── requirements.txt
+│   └── config.json
+├── dags
+│   └── stock_market.py
+├── plugins
+│   ├── __init__.py
+│   └── alpha_vantage_download.py
+├── requirements
+│   └── requirements.txt
+├── startup_script
+│   └── example_startup.sh
+├── .gitignore
 └── README.md
 ```
 ## Features
