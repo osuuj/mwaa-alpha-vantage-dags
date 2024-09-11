@@ -40,6 +40,7 @@ Here is the folder structure of the repository:
 
 ## Usage
  **NOTE:** Have to describe better ...
+ 
 To use the provided DAGs with MWAA, follow these steps:
 
 1. Upload the DAG files to your MWAA environment.
