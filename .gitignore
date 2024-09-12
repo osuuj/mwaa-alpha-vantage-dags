@@ -2,6 +2,7 @@
 /logs
 /db-data
 /git
+/aws_template
 
 # Environments
 .env
@@ -28,6 +29,9 @@ docker/
 startup_script/startup.sh
 
 # Ignore specific files
+/configs/test_config.json
+/configs/example_symbols.json
+/configs/example_config.json
 .github
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
