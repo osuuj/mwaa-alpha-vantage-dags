@@ -2,18 +2,20 @@
 # This import is only this local setup
 import sys
 
+# Import necessary modules
+import pandas as pd
 import os
 import requests
 import json
 import asyncio
 import boto3
 import logging
+import time
 
 
 # This import is only this local setup
 # Ensure the parent directory is in the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 
 from airflow.decorators import dag, task
 from airflow.sensors.base import PokeReturnValue
@@ -64,9 +66,11 @@ def stock_market():
     # Define the async function to fetch all data
     async def fetch_all_data(api_key: str, symbols: list):
         stock_data = {}
+        delay = 60 / 75  # Calculate the delay between API calls
         for symbol in symbols:
             logger.info(f"Fetching data for symbol: {symbol}")
             stock_data[symbol] = await _fetch_stock_data(api_key, symbol)
+            await asyncio.sleep(delay)  # Introduce delay to respect rate limit
         return stock_data
     
     # Define the synchronous wrapper function
