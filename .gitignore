@@ -3,6 +3,7 @@
 /db-data
 /git
 /aws_template
+/configs/data_20241118.json
 
 # Environments
 .env
