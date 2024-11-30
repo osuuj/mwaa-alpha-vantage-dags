@@ -3,14 +3,13 @@
 import sys
 
 # Import necessary modules
-import pandas as pd
+
 import os
 import requests
 import json
 import asyncio
 import boto3
 import logging
-import time
 
 
 # This import is only this local setup
