@@ -37,7 +37,7 @@ CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 mwaa-local-env
 VERSION
-LICENSE
+
 
 # Ignore all files in the startup_script folder
 startup_script/*
