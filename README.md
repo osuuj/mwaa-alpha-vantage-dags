@@ -1,59 +1,114 @@
-# mwaa-alpha-vantage-dags
-## Table of Contents
-- [Introduction](#introduction)
-- [Folder Structure](#folderstructure)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [License](#license)
 
+# mwaa-alpha-vantage-dags
+
+## Table of Contents
+- [mwaa-alpha-vantage-dags](#mwaa-alpha-vantage-dags)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Folder Structure](#folder-structure)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Configuration](#configuration)
+  - [License](#license)
+
+---
 
 ## Introduction
-This project provides a set of Airflow DAGs for automating the process of fetching financial data from Alpha Vantage.The DAGs are designed to be used with AWS Managed Workflows for Apache Airflow (MWAA), simplifying the integration of financial data into your workflows. It includes Python modules, configs and a `requirements.txt` file for managing dependencies.
+
+This repository provides Airflow DAGs designed to automate the retrieval of financial data from Alpha Vantage. The DAGs are optimized for use with AWS Managed Workflows for Apache Airflow (MWAA), making it easy to incorporate financial data into your workflows. The project includes all necessary Python modules, configurations, and a `requirements.txt` file for dependency management.
+
+---
 
 ## Folder Structure
-Here is the folder structure of the repository:
+
+Below is the organized folder structure of this repository:
+
 ```plaintext
 .
 ├── configs
-│   └── config.json
+│   └── config.json          # Contains settings for Alpha Vantage API and DAG configurations
 ├── dags
-│   └── stock_market.py
+│   └── stock_market.py      # Airflow DAG to retrieve stock market data
 ├── plugins
-│   ├── __init__.py
-│   └── alpha_vantage_download.py
+│   ├── __init__.py          # Initializes the plugin
+│   └── alpha_vantage_download.py  # Module for interacting with Alpha Vantage API
 ├── requirements
-│   └── requirements.txt
+│   └── requirements.txt     # Python dependencies required for the project
 ├── startup_script
-│   └── example_startup.sh
-├── .gitignore
-└── README.md
+│   └── example_startup.sh   # Example startup script for setting up the environment
+├── .gitignore               # Files and folders to exclude from version control
+└── README.md                # Project documentation
 ```
+
+---
+
 ## Features
-- Automated retrieval of financial data from Alpha Vantage
-- Integration with AWS Managed Workflows for Apache Airflow (MWAA)
-- Modular Python code and configurable settings
+
+- **Automated Financial Data Retrieval**  
+  Easily fetch financial data such as stock prices, forex rates, and cryptocurrency values.
+  
+- **AWS MWAA Integration**  
+  Seamlessly integrates with AWS Managed Workflows for Apache Airflow (MWAA).
+  
+- **Configurable and Modular Design**  
+  Provides flexibility to adjust settings for your specific requirements.
+
+---
 
 ## Installation
-**NOTE:** Have to describe better ...
-1. To run codes locally: see the [aws-mwaa-local-runner](https://github.com/aws/aws-mwaa-local-runner) on GitHub.
-2. 
+
+Follow these steps to install and set up the project:
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/your-repo/mwaa-alpha-vantage-dags.git
+   cd mwaa-alpha-vantage-dags
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements/requirements.txt
+   ```
+
+3. If testing locally, refer to the [aws-mwaa-local-runner](https://github.com/aws/aws-mwaa-local-runner) for setting up a local MWAA environment.
+
+---
+
 ## Usage
- **NOTE:** Have to describe better ...
- 
-To use the provided DAGs with MWAA, follow these steps:
 
-1. Upload the DAG files to your MWAA environment.
-2. Configure your Alpha Vantage API key in your environment variables or secrets manager.
-4. Trigger the DAGs manually or set up a schedule for automated runs.
+To use the provided DAGs with MWAA:
 
-For more detailed usage instructions, see the individual DAG files and Python modules for configuration options.
+1. **Upload DAGs and Plugins**  
+   Upload the contents of the `dags` and `plugins` directories to the S3 bucket associated with your MWAA environment.
+
+2. **Set Environment Variables**  
+   Configure the Alpha Vantage API key as an environment variable in MWAA. Alternatively, use AWS Secrets Manager for enhanced security.
+
+3. **Trigger DAGs**  
+   - Use the Airflow UI or CLI to trigger DAGs manually.  
+   - Alternatively, schedule the DAGs for periodic execution.
+
+4. **Monitor Execution**  
+   Monitor the execution of the DAGs using the Airflow UI.
+
+---
 
 ## Configuration
-**NOTE:** Have to describe better ...
-- **Alpha Vantage API Key**: Make sure to set your API key in the environment where MWAA is running. This can be done through environment variables or AWS Secrets Manager.
-- **DAG Settings**: Adjust the settings in each DAG to match your needs (e.g., schedule intervals, data parameters).
+
+Here’s how to configure the project:
+
+1. **Alpha Vantage API Key**  
+   Obtain an API key from [Alpha Vantage](https://www.alphavantage.co/support/#api-key) and set it in the MWAA environment as an environment variable (e.g., `ALPHA_VANTAGE_API_KEY`).
+
+2. **DAG Parameters**  
+   Customize the DAG settings (e.g., schedule intervals and data parameters) in the `stock_market.py` file.
+
+3. **Config File**  
+   Edit `config.json` in the `configs` folder to set API endpoints, symbols, and other data-specific configurations.
+
+---
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
